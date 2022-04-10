@@ -62,8 +62,33 @@ namespace _1_Thread
             Console.WriteLine(t2.CurrentCulture.Name);
             //sorduk ve bize adını söyledi
 
-            //örnek: 
+            Console.WriteLine("********************************************************");
+            //örnek: 10 tane thread oluştur ve bunlara ad ver 0 sayısından başlayarak 100 e kadar threadler sıra ile saydıralım
+            for (int i = 0; i < 10; i++)
+            {
+                Thread t3 = new Thread(saydirma);
+                t3.Name = i.ToString();
+                t3.Start();
+            }
 
+            /**********************************************************************/
+
+
+
+            /******************************** Hata Yönetimi **************************************/
+
+            //hata yöneetimi her thread içinde kendi olur yani main içine try except yazıp thredin metodunda hata arayamayız hangi thread hangi metodu çalıştırıyorsa ona göre o metodun içinde hata yönetimi yapmalıyız.
+
+            /**********************************************************************/
+
+
+            /********************************* FATEGROUND VE BACKGROUND *************************************/
+            //Fateground: default olan threadeki değerimiz yani anlamı işi bitince thread kapanır main kapansa bile devam eder.
+            //Background: main kapandığı an kapanır işim varmış yokmuş bakmaz.
+
+            //backgroun tanımlamak için.
+            Thread t4 = new Thread(yaz);
+            t4.IsBackground = true;
             /**********************************************************************/
             Console.ReadLine();
         }
@@ -99,6 +124,13 @@ namespace _1_Thread
         static void yaz()
         {
             Console.WriteLine("Merhaba");
+        }
+
+        static void saydirma()
+        {
+            int name = Int32.Parse(Thread.CurrentThread.Name);
+            Thread.Sleep(name * 100);
+            Console.WriteLine(name);
         }
     }
 }
