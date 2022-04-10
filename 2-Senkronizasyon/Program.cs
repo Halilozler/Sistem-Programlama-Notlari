@@ -23,8 +23,20 @@ namespace _2_Senkronizasyon
             Semaphorda ise bizim belirtiğimiz kadar thread alana girebilir.
             */
 
+            //Lock:
+
+
             /************************** 1-Lock ***************************************************/
 
+        }
+        static void _lock()
+        {
+            lock (obj1)
+            {
+                if(_val2 != 0)
+                    Console.WriteLine(_val1 / _val2);
+                _val2 = 0;
+            }
         }
     }
 }
