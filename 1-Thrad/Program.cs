@@ -90,6 +90,8 @@ namespace _1_Thread
             Thread t4 = new Thread(yaz);
             t4.IsBackground = true;
             /**********************************************************************/
+
+
             Console.ReadLine();
         }
 
