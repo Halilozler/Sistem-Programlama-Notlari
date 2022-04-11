@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Event_Wait_Handles", "3-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.1-CountDownEvent", "3.1-CountDownEvent\3.1-CountDownEvent.csproj", "{AC22182C-582E-4A12-AB49-75116E3BF173}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.1.1-Onekler", "3.1.1-Onekler\3.1.1-Onekler.csproj", "{94CDADFF-67E3-4BD2-A56C-7B3F70E10704}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{AC22182C-582E-4A12-AB49-75116E3BF173}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC22182C-582E-4A12-AB49-75116E3BF173}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC22182C-582E-4A12-AB49-75116E3BF173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CDADFF-67E3-4BD2-A56C-7B3F70E10704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CDADFF-67E3-4BD2-A56C-7B3F70E10704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CDADFF-67E3-4BD2-A56C-7B3F70E10704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CDADFF-67E3-4BD2-A56C-7B3F70E10704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

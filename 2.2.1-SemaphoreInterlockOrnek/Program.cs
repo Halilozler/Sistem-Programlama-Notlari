@@ -15,11 +15,12 @@ namespace _2._2._1_SemaphoreInterlockOrnek
         static void Main(string[] args)
         {
             //semephore beklemesini interlocked ile yapalım mesela bizim kritik alana 3 nesne girsin
+                                                                                        
             for (int i = 0; i < 6; i++)
             {
                 Thread t = new Thread(go);
                 t.Name = "Thread: " + i.ToString();
-                //Thread.Sleep(100);
+                Thread.Sleep(100);
                 t.Start();
             }
 
