@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barrier", "Barrier\Barrier.csproj", "{3EA1543B-CA0C-4614-8D8D-2A84916F9ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2,2-Semaphore", "Semaphore\2,2-Semaphore.csproj", "{13E5A0F4-A82E-43EB-8329-F8939D6EF10E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.2-Semaphore", "Semaphore\2.2-Semaphore.csproj", "{13E5A0F4-A82E-43EB-8329-F8939D6EF10E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryBarrier", "MemoryBarrier\MemoryBarrier.csproj", "{1F89158B-7F83-46C2-BA59-6C2CFC7451FC}"
 EndProject
@@ -13,7 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "paralelfor", "paralelfor\pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1-Thread", "1-Thrad\1-Thread.csproj", "{354A854A-BBD9-4A6C-97F3-5362D06E6316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-Senkronizasyon", "2-Senkronizasyon\2-Senkronizasyon.csproj", "{DB425A14-E074-403D-978F-300C7CC4D0F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-Lock", "2-Senkronizasyon\2-Lock.csproj", "{DB425A14-E074-403D-978F-300C7CC4D0F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.2.1-SemaphoreInterlockOrnek", "2.2.1-SemaphoreInterlockOrnek\2.2.1-SemaphoreInterlockOrnek.csproj", "{4C734AB1-886A-4FA6-AFDE-7D545740E6BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.1-Mutex", "2.1-Mutex\2.1-Mutex.csproj", "{1681E376-B693-4B6E-BB96-9B238F7A969D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Event_Wait_Handles", "3-Event_Wait_Handles\3-Event_Wait_Handles.csproj", "{24C1ABA1-A09F-4C83-A6D4-E391D443448D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.1-CountDownEvent", "3.1-CountDownEvent\3.1-CountDownEvent.csproj", "{AC22182C-582E-4A12-AB49-75116E3BF173}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,22 @@ Global
 		{DB425A14-E074-403D-978F-300C7CC4D0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB425A14-E074-403D-978F-300C7CC4D0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB425A14-E074-403D-978F-300C7CC4D0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C734AB1-886A-4FA6-AFDE-7D545740E6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C734AB1-886A-4FA6-AFDE-7D545740E6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C734AB1-886A-4FA6-AFDE-7D545740E6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C734AB1-886A-4FA6-AFDE-7D545740E6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1681E376-B693-4B6E-BB96-9B238F7A969D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1681E376-B693-4B6E-BB96-9B238F7A969D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1681E376-B693-4B6E-BB96-9B238F7A969D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1681E376-B693-4B6E-BB96-9B238F7A969D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C1ABA1-A09F-4C83-A6D4-E391D443448D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C1ABA1-A09F-4C83-A6D4-E391D443448D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C1ABA1-A09F-4C83-A6D4-E391D443448D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C1ABA1-A09F-4C83-A6D4-E391D443448D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC22182C-582E-4A12-AB49-75116E3BF173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC22182C-582E-4A12-AB49-75116E3BF173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC22182C-582E-4A12-AB49-75116E3BF173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC22182C-582E-4A12-AB49-75116E3BF173}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
