@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Semaphore2
+namespace _2._2_Semaphore
 {
     internal class Program
     {
@@ -13,7 +13,7 @@ namespace Semaphore2
         private static int _padding;
         static void Main(string[] args)
         {
-            _pool = new Semaphore(0,3);
+            _pool = new Semaphore(0, 3);
             for (int i = 0; i < 5; i++)
             {
                 new Thread(Worker).Start();

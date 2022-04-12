@@ -10,7 +10,8 @@ namespace _2._2._1_SemaphoreInterlockOrnek
     internal class Program
     {
         private static int _count = 1;
-        private static int _count2 = 0;
+        private static int _count2 = 4;
+        private static int _count3 = 0;
         static Object obj1 = new Object();
         static void Main(string[] args)
         {
@@ -20,7 +21,7 @@ namespace _2._2._1_SemaphoreInterlockOrnek
             {
                 Thread t = new Thread(go);
                 t.Name = "Thread: " + i.ToString();
-                Thread.Sleep(100);
+                //Thread.Sleep(100);
                 t.Start();
             }
 
@@ -29,18 +30,24 @@ namespace _2._2._1_SemaphoreInterlockOrnek
         static void go()
         {
             Console.WriteLine(Thread.CurrentThread.Name + " geldi");
-            //3 tane girebilsin
+            /*3 tane girebilsin
             
             if(Interlocked.Increment(ref _count2) >= 4)
             {
                 Interlocked.Exchange(ref _count, 0);
             }
-            //Thread.Sleep(100);
+            Thread.Sleep(100);
+            //count -> 0 ise bekliyor
+            //count -> 1 ise beklemeden geçiyor veya 2 de
             while (Interlocked.CompareExchange(ref _count, 0, 0) == 0)
             {
-                Thread.Sleep(5);
+                Thread.Sleep(50);
             }
-            Interlocked.CompareExchange(ref _count, 0, 2);
+
+            if (Interlocked.CompareExchange(ref _count, 2, 2) == 2)
+            {
+                Interlocked.Increment(ref _count2);
+            }
 
 
             Console.WriteLine(Thread.CurrentThread.Name + " içeri girdi kritik alanda");
@@ -49,15 +56,38 @@ namespace _2._2._1_SemaphoreInterlockOrnek
             
             Console.WriteLine(Thread.CurrentThread.Name + " kritik alandan çıktı");
             //Console.WriteLine("düşürdüm: " + Interlocked.Decrement(ref _count));
-            if(Interlocked.Decrement(ref _count) < 4)
-            {
-                Interlocked.Exchange(ref _count, 2);
-            }
-            else
-            {
-                Interlocked.Exchange(ref _count, 0);
-            }
 
+            
+            Interlocked.Exchange(ref _count, 2);
+            Interlocked.Decrement(ref _count2);
+
+            //if(Interlocked.Decrement(ref _count2) < 4)
+            //{
+            //    Interlocked.Exchange(ref _count, 2);
+            //}
+            //else
+            //{
+            //    Interlocked.Exchange(ref _count, 0);
+            //}
+            */
+
+            Interlocked.Decrement(ref _count2);
+            Interlocked.CompareExchange(ref _count2, 1, -1);
+
+            while (Interlocked.CompareExchange(ref _count,0,_count2) <= 0)
+            {
+                Thread.Sleep(10);
+            }
+            
+
+            Console.WriteLine(Thread.CurrentThread.Name + " içeri girdi kritik alanda");
+            Thread.Sleep(2000);
+
+            Console.WriteLine(Thread.CurrentThread.Name + " kritik alandan çıktı");
+            
+            Interlocked.Exchange(ref _count, 1);
+            Interlocked.Exchange(ref _count3, 1);
+            Interlocked.Increment(ref _count2);
         }
     }
 }

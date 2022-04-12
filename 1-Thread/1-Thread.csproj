@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13E5A0F4-A82E-43EB-8329-F8939D6EF10E}</ProjectGuid>
+    <ProjectGuid>{F1B34C8F-297A-4097-BFA7-B3EAAF6836EB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Semaphore</RootNamespace>
-    <AssemblyName>Semaphore</AssemblyName>
+    <RootNamespace>_1_Thread</RootNamespace>
+    <AssemblyName>1-Thread</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

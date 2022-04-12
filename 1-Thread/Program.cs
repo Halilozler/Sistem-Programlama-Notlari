@@ -104,7 +104,7 @@ namespace _1_Thread
                     dogru = true;
                     Console.WriteLine("girdi");
                 }
-            
+
         }
 
         static void joinVsleep()

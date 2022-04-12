@@ -165,9 +165,52 @@ namespace paralelfor
             Console.WriteLine(toplam);
         } 
 
-        static void Ornek5() 
+        static void Ornek5() //1 - x^2/2! + x^4/4! - x^6/6! + .....
         {
-            
+            //normal
+            double sayi = 1;
+            int t = -1;
+            int x = 1;
+
+            for (int i = 2; i < 30; i = i + 2)
+            {
+                sayi = sayi + Math.Pow(x,i) / fac(i) * t;
+                t = t * -1;
+            }
+            Console.WriteLine(sayi);
+
+            sayi = 1;
+            //parallelfor:
+            Parallel.For<double>(1,16, new ParallelOptions { MaxDegreeOfParallelism = 4 },
+                () => 0,
+                (i, loop, localState) =>
+                {
+                    int cmt = i * 2;
+                    if (i % 2 == 0)
+                        return localState + Math.Pow(x, cmt) / fac(cmt);
+                    else
+                        return localState - Math.Pow(x, cmt) / fac(cmt);
+                },
+                localState =>
+                {
+                    sayi = sayi + localState;
+                });
+            Console.WriteLine(sayi);
+        }
+
+        static int fac(int number)
+        {
+            int sonuc = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                sonuc = sonuc * i;
+            }
+            return sonuc;
+        }
+
+        static void Ornek6() //mesela 153 -> 1^3 + 5^3 + 3^3
+        {
+
         }
     }
 }

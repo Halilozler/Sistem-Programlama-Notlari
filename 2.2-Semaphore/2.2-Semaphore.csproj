@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3DA31C41-6075-49FD-875F-12587B5A403F}</ProjectGuid>
+    <ProjectGuid>{E395C86A-B7A3-409B-B357-AF329677A09A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SistemCalisma</RootNamespace>
-    <AssemblyName>SistemCalisma</AssemblyName>
+    <RootNamespace>_2._2_Semaphore</RootNamespace>
+    <AssemblyName>2.2-Semaphore</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
