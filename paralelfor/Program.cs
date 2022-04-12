@@ -17,8 +17,8 @@ namespace Parallelfor
             //Ornek1();
             //Ornek2();
             //Ornek4();
-            Ornek5();
-
+            //Ornek5();
+            Ornek6();
             Console.ReadLine();
         }
         static void pi1()
@@ -210,7 +210,34 @@ namespace Parallelfor
 
         static void Ornek6() //mesela 153 -> 1^3 + 5^3 + 3^3
         {
+            int a = 153;
+            int b = a;
+            int basamak = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                b = b / 10;
+                basamak++;
+                if (b == 0){
+                    break;
+                }
+            }
+            int sonuc = 0;
+            b = a;
+            for (int i = basamak; i > 0; i--)
+            {
+                int c = b / (int)(Math.Pow(10, i - 1));
+                sonuc = sonuc + (int)Math.Pow(c,basamak);
 
+                b = b - (c*(int)Math.Pow(10, i - 1));
+            }
+
+            if (a == sonuc)
+            {
+                Console.WriteLine("Bu bir bilmem ne sayı işte");
+            }
+
+
+            //Paralel 
         }
     }
 }
