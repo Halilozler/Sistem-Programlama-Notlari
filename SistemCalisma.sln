@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barrier", "Barrier\Barrier.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryBarrier", "MemoryBarrier\MemoryBarrier.csproj", "{1F89158B-7F83-46C2-BA59-6C2CFC7451FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "paralelfor", "paralelfor\paralelfor.csproj", "{0E0A9310-AEEA-4F93-B558-B821C17CA204}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallelfor", "paralelfor\Parallelfor.csproj", "{0E0A9310-AEEA-4F93-B558-B821C17CA204}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-Lock", "2-Senkronizasyon\2-Lock.csproj", "{DB425A14-E074-403D-978F-300C7CC4D0F6}"
 EndProject
