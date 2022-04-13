@@ -17,7 +17,7 @@ namespace Parallelfor
             //Ornek1();
             //Ornek2();
             //Ornek4();
-            //Ornek5();
+           Ornek9();
             //Ornek6();
             //Ornek0();
             Console.WriteLine("merhaba");
@@ -221,7 +221,7 @@ namespace Parallelfor
             return sonuc;
         }
 
-        static void Ornek8() //paralle.for yapısını parallel.forsuz hale getirmeliyiz.
+        static void Ornek8() //paralle.for yapısını parallel.forsuz hale getirmeliyiz. BU OLMUYYYYYOOOOOORRRRRR
         {
             double pi = 1;
             Parallel.For<double>(1, 1000000, new ParallelOptions { MaxDegreeOfParallelism = 4 },
@@ -281,9 +281,31 @@ namespace Parallelfor
             }
         }
     
-        static void Ornek9() // kök(2)/2 * kök(2 + kök(2))/2 * kök(2 + kök(2 + kök(2)))/2 * ...
+        static void Ornek9() //1 + x + x^2/2! + x^3/3! + .....
         {
-            
+            double sayi = 1;
+            int x = 1;
+
+            for (int i = 1; i < 30; i++)
+            {
+                sayi = sayi + Math.Pow(x, i) / fac(i);
+            }
+            Console.WriteLine(sayi);
+
+            sayi = 1;
+            Parallel.For<double>(1, 16, new ParallelOptions { MaxDegreeOfParallelism = 4 },
+                () => 0,
+                (i, loop, localState) =>
+                {
+                    return localState + Math.Pow(x, i) / fac(i);
+                },
+                localState =>
+                {
+                    sayi = sayi + localState;
+                });
+            Console.WriteLine(sayi);
         }
+
+        
     }
 }
