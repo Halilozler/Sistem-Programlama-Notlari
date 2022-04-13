@@ -305,7 +305,5 @@ namespace Parallelfor
                 });
             Console.WriteLine(sayi);
         }
-
-        
     }
 }

@@ -42,7 +42,7 @@ namespace Task2
 
             int index = Task.WaitAny(tasks); //ilk çıkanın indexini verir.
              
-            Task.WaitAll(tasks); //bütün tasks bitmesini bekler. 
+            Task.WaitAll(tasks); //bütün tasks bitmesini bekler.
 
             Console.ReadLine();
         }
