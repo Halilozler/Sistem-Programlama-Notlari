@@ -18,8 +18,21 @@ namespace Parallelfor
             //Ornek2();
             //Ornek4();
             //Ornek5();
-            Ornek6();
+            //Ornek6();
+            //Ornek0();
+            Console.WriteLine("merhaba");
+            //paralel.for yapısında çağıran thread bloke olur For yapısı bittikten sonra çalışmaya başlar
+            
+
             Console.ReadLine();
+        }
+        static void Ornek0()
+        {
+            Parallel.For(0, 10,new ParallelOptions { MaxDegreeOfParallelism = 4}, (i) =>
+              {
+                  Console.WriteLine(i);
+                  Thread.Sleep(6000);
+              });
         }
         static void pi1()
         {
@@ -208,36 +221,69 @@ namespace Parallelfor
             return sonuc;
         }
 
-        static void Ornek6() //mesela 153 -> 1^3 + 5^3 + 3^3
+        static void Ornek8() //paralle.for yapısını parallel.forsuz hale getirmeliyiz.
         {
-            int a = 153;
-            int b = a;
-            int basamak = 0;
-            for (int i = 0; i < 10; i++)
+            double pi = 1;
+            Parallel.For<double>(1, 1000000, new ParallelOptions { MaxDegreeOfParallelism = 4 },
+                () => 0,
+                (i, loop, localState) =>
+                {
+                    int cmt = i * 2 + 1;
+                    //1 2 3 4 5
+                    //3 5 7 9 11
+                    if (i % 2 == 0)
+                        return localState + (double)1 / cmt;
+                    else
+                        return localState - (double)1 / cmt;
+                },
+                localState =>
+                {
+                    pi = pi + localState;
+                });
+            Console.WriteLine(pi * 4);
+
+            //çözüm: 8 tread ile
+            for (int i = 0; i < 2; i++)
             {
-                b = b / 10;
-                basamak++;
-                if (b == 0){
-                    break;
+                Thread t = new Thread(go);
+                t.Name = i.ToString();
+                t.Start();
+            }
+            Console.WriteLine(sonuc);
+        }
+        private static double sonuc;
+        static void go() //olmadı
+        {
+            int sayi = 100000 / 2; //12500
+            //0 -> 0 - 12500
+            //1 -> 12500 - 25000
+            //...
+            int ThreadNo = Int32.Parse(Thread.CurrentThread.Name);
+            int kucukSayi = sayi * ThreadNo;
+            int buyukSayi = sayi * (ThreadNo + 1);
+
+            double localState = 1;
+            for (int i = kucukSayi; i < buyukSayi; i++)
+            {
+                int cmt = i * 2 + 1;
+                if (i %2 == 0)
+                {
+                    localState = localState + (double)1 / cmt;
+                }
+                else
+                {
+                    localState = localState - (double)1 / cmt;
                 }
             }
-            int sonuc = 0;
-            b = a;
-            for (int i = basamak; i > 0; i--)
+            lock (kilit)
             {
-                int c = b / (int)(Math.Pow(10, i - 1));
-                sonuc = sonuc + (int)Math.Pow(c,basamak);
-
-                b = b - (c*(int)Math.Pow(10, i - 1));
+                sonuc = sonuc + localState;
             }
-
-            if (a == sonuc)
-            {
-                Console.WriteLine("Bu bir bilmem ne sayı işte");
-            }
-
-
-            //Paralel 
+        }
+    
+        static void Ornek9() // kök(2)/2 * kök(2 + kök(2))/2 * kök(2 + kök(2 + kök(2)))/2 * ...
+        {
+            
         }
     }
 }
