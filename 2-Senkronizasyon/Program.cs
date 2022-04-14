@@ -81,7 +81,7 @@ namespace _2_Senkronizasyon
             /*
              deadlock düşer isek program kitlenir dışaran müdahale ile kapatmak zorunda kalırız.
                 nasıl olur peki:
-                    En az 2 tane lock lazımdır. Bunlar açılmak için birbirinden komut bekler isek hiçbir zaman açılmazlar sıkıntı bir durumdur.
+                    En az 2 tane lock ve en az 2 tane thread lazımdır. Bunlar açılmak için birbirinden komut bekler ise hiçbir zaman açılmazlar sıkıntı bir durumdur.
              */ 
             new Thread(() =>
             {

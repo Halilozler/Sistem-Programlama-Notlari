@@ -63,7 +63,7 @@ namespace _1_Thread
             //sorduk ve bize adını söyledi
 
             Console.WriteLine("********************************************************");
-            //örnek: 10 tane thread oluştur ve bunlara ad ver 0 sayısından başlayarak 100 e kadar threadler sıra ile saydıralım
+            //örnek: 10 tane thread oluştur ve bunlara ad ver 0 sayısından başlayarak 10 a kadar threadler sıra ile saydıralım
             for (int i = 0; i < 10; i++)
             {
                 Thread t3 = new Thread(saydirma);

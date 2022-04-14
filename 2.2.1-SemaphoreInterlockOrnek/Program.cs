@@ -32,7 +32,7 @@ namespace _2._2._1_SemaphoreInterlockOrnek
             Interlocked.Decrement(ref _count2);
             Interlocked.CompareExchange(ref _count2, -1, -2);
 
-
+            /*
             while (Interlocked.CompareExchange(ref _count2, _count2, _count2) < 0)
             {
                 Thread.Sleep(Int32.Parse(Thread.CurrentThread.Name) * 20);
@@ -44,7 +44,17 @@ namespace _2._2._1_SemaphoreInterlockOrnek
                     Interlocked.Decrement(ref _count2);
                 }
             }
+            */
+            lock (obj1)
+            {
+                while (_count2 < 0) ;
             
+                if (_count3 == 1)
+                {
+                    _count2--;
+                }
+            }
+
             Console.WriteLine(Thread.CurrentThread.Name + " içeri girdi kritik alanda");
             Thread.Sleep(1000);
 

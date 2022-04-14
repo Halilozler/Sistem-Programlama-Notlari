@@ -17,7 +17,7 @@ namespace Parallelfor
             //Ornek1();
             //Ornek2();
             //Ornek4();
-           Ornek9();
+             Ornek9();
             //Ornek6();
             //Ornek0();
             Console.WriteLine("merhaba");

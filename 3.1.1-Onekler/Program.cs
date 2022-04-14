@@ -9,8 +9,8 @@ namespace _3._1._1_Onekler
 {
     internal class Program
     {
-        static EventWaitHandle _TekautoReset = new AutoResetEvent(true);
-        static EventWaitHandle _CiftautoReset = new AutoResetEvent(false);
+        static AutoResetEvent _TekautoReset = new AutoResetEvent(true);
+        static AutoResetEvent _CiftautoReset = new AutoResetEvent(false);
         static void Main(string[] args)
         {
             new Thread(tek).Start();
