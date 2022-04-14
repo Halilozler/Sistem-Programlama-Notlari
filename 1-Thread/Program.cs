@@ -87,12 +87,18 @@ namespace _1_Thread
             //Background: main kapandığı an kapanır işim varmış yokmuş bakmaz.
 
             //backgroun tanımlamak için.
-            Thread t4 = new Thread(yaz);
+            Thread t4 = new Thread(() => { Thread.Sleep(3000); Console.WriteLine("bura girdim çalıştırdım"); });
             t4.IsBackground = true;
-            /**********************************************************************/
+            /*********************************************************************
+            Thread.Sleep(2500);
+            for (int i = 0; i < 10; i++)
+            {
+                new Thread(saydirma2).Start();
+            }*/
+            t4.Start();
+            t4.Join();
 
-
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         static void go()
@@ -125,14 +131,45 @@ namespace _1_Thread
 
         static void yaz()
         {
+            Thread.Sleep(5000);
             Console.WriteLine("Merhaba");
         }
 
         static void saydirma()
         {
             int name = Int32.Parse(Thread.CurrentThread.Name);
-            Thread.Sleep(name * 100);
+            Thread.Sleep(name * 10);
             Console.WriteLine(name);
+        }
+
+        static int sayi = 0;
+        static int sayi2 = 0;
+        static int sayi3 = 0;
+        static object obj2 = new object();
+        static AutoResetEvent _event = new AutoResetEvent(true);
+        static void saydirma2()
+        {
+            /*
+            lock (obj2)
+            {
+                Console.WriteLine(sayi);
+                Interlocked.Increment(ref sayi);
+            }*/
+
+            /*yada
+
+            _event.WaitOne();
+            Console.WriteLine(sayi);
+            Interlocked.Increment(ref sayi);
+            _event.Set();*/
+
+            while (Interlocked.CompareExchange(ref sayi, 0, sayi2) != 0) ;
+            Interlocked.Increment(ref sayi);
+
+            Console.WriteLine(sayi3);
+            Interlocked.Increment(ref sayi3);
+
+            Interlocked.Exchange(ref sayi2, 1);
         }
     }
 }

@@ -70,7 +70,7 @@ namespace Parallelfor
         
         static void pi2()
         {
-            //pi = 3 + 4/(2*3*4) - 4/(5*6*7) + 4/(8*9*10) - ...
+            //pi = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(7*8*9) - ...
 
             //normal
             double pi = 3;
@@ -139,7 +139,7 @@ namespace Parallelfor
             });
             Console.WriteLine(toplam);
         }
-
+        
         static void Ornek3() //1 - 2 - 3 + 4 + 5 + 6 - 7 - 8 - 9 - 10 + 11 + 12 + 13 + 14... BUNUN PARALEL.FOR OLMAZ
         {//1 -2 3 -4 5 -6
             int toplam = 0;
@@ -194,11 +194,11 @@ namespace Parallelfor
 
             sayi = 1;
             //parallelfor:
-            Parallel.For<double>(1,16, new ParallelOptions { MaxDegreeOfParallelism = 4 },
+            Parallel.For<double>(1,16, 
                 () => 0,
                 (i, loop, localState) =>
                 {
-                    int cmt = i * 2;
+                    int cmt = (int)i * 2;
                     if (i % 2 == 0)
                         return localState + Math.Pow(x, cmt) / fac(cmt);
                     else

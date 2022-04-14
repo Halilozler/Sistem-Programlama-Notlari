@@ -18,7 +18,7 @@ namespace Task2
             Threadlerde t.join() metodu => Threadin işini bitirmesini bekler sonra çalışır. 
             Tasklarda t.wait() metudu aynı işlevdedir.
 
-            Tasklar => Background threadlerdir main threadlerin bitmesini beklemez.
+            Tasklar => Background threadlerdir main thread bitmesini beklemez.
              */
 
             //task creat edip çalıştırdıkaa
