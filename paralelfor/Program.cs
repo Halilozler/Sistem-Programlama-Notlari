@@ -23,7 +23,8 @@ namespace Parallelfor
             Console.WriteLine("merhaba");
             //paralel.for yapısında çağıran thread bloke olur For yapısı bittikten sonra çalışmaya başlar
 
-            SınavSorusu();
+            //SınavSorusu();
+            SınavSorusu2();
             
 
             Console.ReadLine();
@@ -65,6 +66,33 @@ namespace Parallelfor
                     {
                         buyuk_sayi = localState;
                     }
+                });
+
+            Console.WriteLine(buyuk_sayi);
+        }
+
+        static void SınavSorusu2()
+        {
+            //[10000] dizimiz var bunun içinden en büyük sayıyı bul
+            int[] dizi = new int[10000];
+            for (int i = 0; i < 10000; i++)
+            {
+                dizi[i] = i;
+            }
+
+            int buyuk_sayi = 0;
+            Parallel.For(0,8, new ParallelOptions { MaxDegreeOfParallelism = 8 },
+                () => 0,
+                (i, loop, localState) =>
+                {
+                    if (localState < dizi[i])
+                    {
+                        return localState;
+                    }
+                },
+                localState =>
+                {
+                    buyuk_sayi = localState;
                 });
 
             Console.WriteLine(buyuk_sayi);
