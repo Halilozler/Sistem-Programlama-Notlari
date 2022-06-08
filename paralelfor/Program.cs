@@ -80,6 +80,8 @@ namespace Parallelfor
                 dizi[i] = i;
             }
 
+            dizi[56] = 98765432;
+
             int buyuk_sayi = 0;
             Parallel.For(0,10000, new ParallelOptions { MaxDegreeOfParallelism = 8 },
                 () => 0,
