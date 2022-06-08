@@ -75,24 +75,28 @@ namespace Parallelfor
         {
             //[10000] dizimiz var bunun içinden en büyük sayıyı bul
             int[] dizi = new int[10000];
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 500; i++)
             {
                 dizi[i] = i;
             }
 
             int buyuk_sayi = 0;
-            Parallel.For(0,8, new ParallelOptions { MaxDegreeOfParallelism = 8 },
+            Parallel.For(0,10000, new ParallelOptions { MaxDegreeOfParallelism = 8 },
                 () => 0,
                 (i, loop, localState) =>
                 {
                     if (localState < dizi[i])
                     {
-                        return localState;
+                        localState = dizi[i];
                     }
+                    return localState;
                 },
                 localState =>
                 {
-                    buyuk_sayi = localState;
+                    if (buyuk_sayi < localState)
+                    {
+                        buyuk_sayi = localState;
+                    }
                 });
 
             Console.WriteLine(buyuk_sayi);
