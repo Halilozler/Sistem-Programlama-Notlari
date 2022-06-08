@@ -17,15 +17,59 @@ namespace Parallelfor
             //Ornek1();
             //Ornek2();
             //Ornek4();
-             Ornek9();
+            //Ornek9();
             //Ornek6();
             //Ornek0();
             Console.WriteLine("merhaba");
             //paralel.for yapısında çağıran thread bloke olur For yapısı bittikten sonra çalışmaya başlar
+
+            SınavSorusu();
             
 
             Console.ReadLine();
         }
+
+        static void SınavSorusu()
+        {
+            //[8,10000] dizi var içindeki en büyük sayı nedir
+
+            //Diziyi oluşturalım
+            int[,] dizi = new int[8,10000];
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 10000; j++)
+                {
+                    dizi[i, j] = (i + 1) * j;
+                }
+            }
+
+            int buyuk_sayi = 0;
+            Parallel.For(0,8, new ParallelOptions { MaxDegreeOfParallelism = 8 },
+                () => 0,
+                (i, loop, localState) =>
+                {
+                    //localState = 0;
+                    for (int j = 0; j < 10000; j++)
+                    {
+                        if (localState < dizi[i, j])
+                        {
+                            localState = dizi[i, j];
+                        }
+                    }
+
+                    return localState;
+                },
+                localState =>
+                {
+                    if (buyuk_sayi < localState)
+                    {
+                        buyuk_sayi = localState;
+                    }
+                });
+
+            Console.WriteLine(buyuk_sayi);
+        }
+
         static void Ornek0()
         {
             Parallel.For(0, 10,new ParallelOptions { MaxDegreeOfParallelism = 4}, (i) =>
