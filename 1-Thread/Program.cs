@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,6 +47,10 @@ namespace _1_Thread
             {
                 Console.WriteLine("mesaj merhaba");
             }).Start();
+
+            new Thread(() => Print("Merhaba")).Start();
+
+            new Thread((object text) => { Console.WriteLine(text); }).Start("Merhaba");
 
             //başka bir yol olarak start() kısmındanda mesajı gönderebiliriz.
             new Thread(veriVer).Start("start kısmından gönderdim daha rahat oldu be AMA BURADA OBJECT E VERİ GÖNDERİLİR UNUTMA");
@@ -99,11 +104,27 @@ namespace _1_Thread
             t4.Join();
 
             //Console.ReadLine();
+
+            /*
+             * Çalıştıracağımız program sayısı Core sayımızdan fazlaysa Round Robin olur.
+             * Her bir Threadi istediğimiz Core da çalıştırbiliriz. Dotnet bunu kendisi optimie eder.
+             * Thread sayısı Core sayısını geçmemelidir. Yoksa performans düşer.
+             *
+             * Thread kısmından veri görndermek istiyorsak bunu karşı tarafta sadece object ile alırız. string, int... türünde alamyız.
+             * Ama eğer boş lambda () => Print("merhaba"); gibisinden thread oluşturuyorsak burada string veya başka türde alabiliriz. 50. Satıra örnek bulunmakta.
+             *
+             * Backgroun Thread:
+             * Task yani havuzdan thread oluşturduğumuzda bu Background thread olur.
+             * foreground threadler ile aynı performansı sağlarlar.
+             * Name özelliği ile isim verilemez.
+             * Senkronizasyon nesnelerini kullanabiliriz.
+             *
+             */
         }
 
         static void go()
         {
-            //lock ile kritik alana sadece 1 thread sokarız o thread işini bitirincee diğer sırada bekleyen thread alana girer.
+            //lock ile kritik alana sadece 1 thread sokarız o thread işini bitirince diğer sırada bekleyen thread alana girer.
             lock (obj1)
                 if (!dogru)
                 {
@@ -133,6 +154,11 @@ namespace _1_Thread
         {
             Thread.Sleep(5000);
             Console.WriteLine("Merhaba");
+        }
+
+        static void Print(string text)
+        {
+            Console.WriteLine(text);
         }
 
         static void saydirma()

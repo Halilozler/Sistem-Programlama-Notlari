@@ -20,7 +20,7 @@ namespace _3_Event_Wait_Handles
                     1-AutoResetEvent:
                             tam olarak turnike gibidir kapı ilk başta kapalıdır bilet aldığında yalnızca tek kişinin geçmesine izin verir o işini bitirdikten sonra bilet alan başkası geçer.
                     2-ManuelResetEvent
-                            AutoResetEvent ile tek farkı kapı açıldığında bekleyen bütün theadrler geçer bunu bilemeyiz.
+                            AutoResetEvent ile tek farkı kapı açıldığında bekleyen bütün theadler geçer bunu bilemeyiz.
                             !!!yani kapı bir kere açıldığında kapanana kadar hepsi geçer.
 
                             Reset ile kapıyı kapatmamız lazım yoksa kapı hep açık kalır.

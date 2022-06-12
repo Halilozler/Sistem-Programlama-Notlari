@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +35,7 @@ namespace _2_Senkronizasyon
 
 
             //Lock:
-            //kritik alana yalnızca 1 tane thredi sokar o ii bitiğinde çıkar tanımlaması basitir object tanımlarsın bir tane kilit diye direk olarak kritik alanı içine alırsın.
+            //kritik alana yalnızca 1 tane thredi sokar o işi bitiğinde çıkar tanımlaması basitir object tanımlarsın bir tane kilit diye direk olarak kritik alanı içine alırsın.
 
             /************************** 1-Lock ***************************************************/
 

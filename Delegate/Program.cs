@@ -21,7 +21,8 @@ namespace Delegate
                 Action ve function diye 2 tane microsoftun bize sunudğu hazır pointer vardır 
                 Action -> geriye değer döndürmeyen(void)
                 function -> geriye değer döndüren.
-                
+
+             * Her Gelegatenin kendine özgü imzası vardır.
              */
 
             dortislem di = topla;

@@ -13,7 +13,7 @@ namespace MemoryBarrier1
         bool _complete;
         static void Main(string[] args)
         {
-            //memoryBarrier ile sıra ile çalıştırmayı sağlarız kodları yani burada _answer = 123 ile kaydedikten sonra _complete = true yapıcak. 
+            //memoryBarrier ile sıra ile çalıştırmayı sağlarız kodları. Yani burada _answer = 123 ile kaydedikten sonra _complete = true yapıcak. 
         }
         void A()
         {

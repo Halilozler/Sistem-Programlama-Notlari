@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task", "Task\Task.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{B59AD811-EFD4-440B-878A-1C47EECF13B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Denemeler", "Denemeler\Denemeler.csproj", "{06DC5C6D-6EAE-4030-8B2F-F981788627F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{B59AD811-EFD4-440B-878A-1C47EECF13B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B59AD811-EFD4-440B-878A-1C47EECF13B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B59AD811-EFD4-440B-878A-1C47EECF13B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DC5C6D-6EAE-4030-8B2F-F981788627F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DC5C6D-6EAE-4030-8B2F-F981788627F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DC5C6D-6EAE-4030-8B2F-F981788627F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DC5C6D-6EAE-4030-8B2F-F981788627F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

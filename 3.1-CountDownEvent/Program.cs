@@ -23,7 +23,7 @@ namespace _3._1_CountDownEvent
             }
 
             _count.Wait();
-            //main thredi beklemye aldık 3 kere signal gelirse çalışmaya başlıcak
+            //main thredi beklemeye aldık 3 kere signal gelirse çalışmaya başlıcak
 
             Console.WriteLine("İş bitti");
             Console.ReadLine();
@@ -34,7 +34,7 @@ namespace _3._1_CountDownEvent
             Console.WriteLine(mesaj);
 
             _count.Signal();
-            //signal ile verilen göreven 1 tane yaptık düş demek.
+            //signal ile verilen görevi 1 tane yaptık düş demek.
         }
     }
 }

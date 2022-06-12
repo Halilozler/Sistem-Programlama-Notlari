@@ -21,7 +21,7 @@ namespace Task2
             Tasklar => Background threadlerdir main thread bitmesini beklemez.
              */
 
-            //task creat edip çalıştırdıkaa
+            //task creat edip çalıştırdık
             Task t = Task.Factory.StartNew(() =>
             {
                 int ctr = 0;
